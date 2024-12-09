@@ -91,7 +91,7 @@ footer p {
 
 /* Accessibility Enhancements */
 a {
-  color: #4CAF50;
+  color: #333;
   text-decoration: none;
 }
 
@@ -112,4 +112,22 @@ a:hover {
   header p {
     font-size: 1em;
   }
+}
+
+.skip-link {
+  position: center;
+  top: 0;
+  left: 0;
+  color: #333; /* High-contrast text color */
+  padding: 10px;
+  text-decoration: none;
+  font-size: 1rem;
+  z-index: 1000;
+  transform: translateY(-100%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+  outline: 2px solid white; /* Visible focus outline */
+  text-decoration: underline;
 }
