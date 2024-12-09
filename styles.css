@@ -27,18 +27,11 @@ header p {
   margin: 0;
 }
 
-@media (max-width: 768px) {
-  body {
-    font-size: 1rem; /* Maintain base size */
-  }
-
-  header h1 {
-    font-size: 2rem; /* 32px */
-  }
-
-  header p {
-    font-size: 1.125rem; /* 18px */
-  }
+/* Styling for h3 headings */
+h3 {
+  font-size: 1.275rem; /* Slightly smaller than h2 */
+  color: #4A4A4A; /* Dark gray for good contrast */
+  font-weight: bold; /* Ensure the text is emphasized */
 }
 
 /* Main Content */
@@ -52,7 +45,7 @@ section {
 
 section h2 {
   color: #333333;
-  border-bottom: 2px solid  #333333;
+  border-bottom: 2px solid #333333;
   padding-bottom: 5px;
   margin-bottom: 15px;
 }
@@ -81,8 +74,9 @@ img {
 footer {
   text-align: center;
   padding: 20px;
-  background-color: #333;
+  background-color: #111;
   color: white;
+  font-size: 1.125rem; /* Slightly larger for readability */
 }
 
 footer p {
@@ -99,35 +93,41 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  body {
-    font-size: 16px;
-  }
-
-  header h1 {
-    font-size: 2em;
-  }
-
-  header p {
-    font-size: 1em;
-  }
-}
-
 .skip-link {
-  position: center;
-  top: 0;
-  left: 0;
-  color: #333; /* High-contrast text color */
+  position: absolute; /* Ensures it is positioned relative to the viewport */
+  top: 10px;
+  left: 10px;
+  background: #6A5ACD; /* High-contrast background */
+  color: white; /* High-contrast text */
   padding: 10px;
   text-decoration: none;
   font-size: 1rem;
   z-index: 1000;
-  transform: translateY(-100%);
+  clip: rect(1px, 1px, 1px, 1px); /* Hides the link visually but keeps it accessible */
+  clip-path: inset(50%); /* Alternative for better browser compatibility */
+  border-radius: 5px; /* Optional: Makes the link visually appealing when focused */
 }
 
 .skip-link:focus {
-  transform: translateY(0);
-  outline: 2px solid white; /* Visible focus outline */
-  text-decoration: underline;
+  clip: auto; /* Makes the link visible on focus */
+  clip-path: none; /* Ensures compatibility */
+  transform: translateY(0); /* Removes the hiding effect */
+  background: #4CAF50; /* Optional: Change background on focus */
+  outline: 3px solid white; /* High-contrast outline for visibility */
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    font-size: 1rem;
+  }
+
+  header h1 {
+    font-size: 2rem; /* 32px */
+  }
+
+  header p {
+    font-size: 1.125rem; /* 18px */
+  }
 }
